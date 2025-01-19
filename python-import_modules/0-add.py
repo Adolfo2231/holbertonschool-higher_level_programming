@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 
 if __name__ == "__main__":
+    # Import add function from add_0.py
     from add_0 import add
 
-    a = 1  # Assign the first value
-    b = 2  # Assign the second value
-    result = add(a, b)  # Call the add function
+    # Define the values of a and b
+    a = 1
+    b = 2
 
-    # Print the result in the required format
-    print(f"{a} + {b} = {result}")
+    # Call the add function and print the formatted result
+    print(f"{a} + {b} = {add(a, b)}")
