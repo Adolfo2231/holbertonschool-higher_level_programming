@@ -8,9 +8,8 @@ Traceback (most recent call last):
     ...
 Exception: area() is not implemented
 
-# Prueba con un número válido (no debe lanzar error)
+# Prueba con valores válidos (debe pasar sin errores)
 >>> bg.integer_validator("my_int", 12)
-
 >>> bg.integer_validator("width", 89)
 
 # Prueba con un valor no entero (debe lanzar TypeError)
@@ -18,6 +17,11 @@ Exception: area() is not implemented
 Traceback (most recent call last):
     ...
 TypeError: name must be an integer
+
+>>> bg.integer_validator("value", 3.14)
+Traceback (most recent call last):
+    ...
+TypeError: value must be an integer
 
 # Prueba con un número <= 0 (debe lanzar ValueError)
 >>> bg.integer_validator("age", 0)
