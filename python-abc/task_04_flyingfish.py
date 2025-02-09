@@ -56,7 +56,7 @@ class FlyingFish(Fish, Bird):
     """
     def swim(self):
         """Overrides swim method to represent flying fish swimming."""
-        print("The flying fish is swimming!")
+        print("The flying fish is soaring!")
 
     def habitat(self):
         """Overrides habitat method to describe its dual habitat."""
