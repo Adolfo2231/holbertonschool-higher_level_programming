@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
 
-from abc import ABC, abstractmethod
-import math
-
 """
 Module: Shape Duck Typing
 
@@ -24,6 +21,9 @@ Usage Example:
     shape_info(circle)
     shape_info(rectangle)
 """
+
+from abc import ABC, abstractmethod
+import math
 
 
 class Shape(ABC):
