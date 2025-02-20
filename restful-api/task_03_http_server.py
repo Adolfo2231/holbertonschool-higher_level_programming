@@ -10,9 +10,6 @@ This module implements a basic API that serves different endpoints:
 - "/info"   : Returns API metadata.
 
 If a request is made to an undefined endpoint, a 404 response is returned.
-
-Author: Your Name
-Date: 2025-02-19
 """
 
 import http.server
@@ -57,7 +54,7 @@ class SimpleAPIHandler(http.server.BaseHTTPRequestHandler):
             self.send_response(HTTPStatus.OK)
             self.send_header("Content-Type", "application/json")
             self.end_headers()
-            self.wfile.write(json.dumps({"status": "OK"}).encode("utf-8"))
+            self.wfile.write(json.dumps({"status": "ok"}).encode("utf-8"))
 
         elif self.path == "/info":
             self.send_response(HTTPStatus.OK)
@@ -73,7 +70,7 @@ class SimpleAPIHandler(http.server.BaseHTTPRequestHandler):
             self.send_response(HTTPStatus.NOT_FOUND)
             self.send_header("Content-Type", "application/json")
             self.end_headers()
-            error_msg = {"error": "Endpoint not found"}
+            error_msg = {"message": "Not Found"}  # Fixed
             self.wfile.write(json.dumps(error_msg).encode("utf-8"))
 
 
