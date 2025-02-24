@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 Flask API with Basic Authentication and JWT Authentication.
 
