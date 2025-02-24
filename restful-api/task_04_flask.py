@@ -7,6 +7,7 @@ retrieve specific user details, and add new users.
 """
 
 from flask import Flask, jsonify, request
+import json
 
 app = Flask(__name__)
 
@@ -78,37 +79,32 @@ def get_user(username):
 
 @app.route('/add_user', methods=['POST'])
 def add_user():
-    """
-    Adds a new user to the system.
+    """Handles adding a new user with JSON validation."""
 
-    Request:
-        JSON: {
-            "username": "string",
-            "name": "string",
-            "age": int,
-            "city": "string"
-        }
-
-    Returns:
-        JSON: Confirmation message and user details if successful,
-              otherwise an error message.
-    """
-    if not request.is_json:
+    try:
+        data = request.get_json(force=True)
+    except (TypeError, json.JSONDecodeError):
         return jsonify({"error": "Invalid JSON format"}), 400
 
-    data = request.get_json()
     required_keys = {"username", "name", "age", "city"}
-
     if not all(key in data for key in required_keys):
         return jsonify({"error": "Missing required fields"}), 400
 
     username = data["username"].lower()
-
     if username in users:
         return jsonify({"error": "User already exists"}), 400
 
     users[username] = data
     return jsonify({"message": "User added successfully", "user": data}), 201
+
+
+@app.errorhandler(404)
+def not_found(error):
+    """
+    Custom 404 error handler for undefined routes.
+    Returns a JSON error response instead of the default HTML page.
+    """
+    return jsonify({"error": "Endpoint not found"}), 404
 
 
 if __name__ == "__main__":
