@@ -217,6 +217,12 @@ def handle_needs_fresh_token_error(err):
     return jsonify({"error": "Fresh token required"}), 401
 
 
+@auth.error_handler
+def unauthorized():
+    """Return JSON response for unauthorized access."""
+    return jsonify({"error": "Unauthorized Access"}), 401
+
+
 # 🚀 Run the Flask App
 if __name__ == "__main__":
     app.run(debug=True)
