@@ -1,5 +1,5 @@
---create table Id_not_null CANNOT BE NULL ID
-CREATE TABLE IF NOT EXISTS Id_not_null (
-    id INT DEFAULT 1,
+-- Create the table id_not_null if it does not exist
+CREATE TABLE IF NOT EXISTS id_not_null (
+    id INT NOT NULL DEFAULT 1,
     name VARCHAR(256)
 );
