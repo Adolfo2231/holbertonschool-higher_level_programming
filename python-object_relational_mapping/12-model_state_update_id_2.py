@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Changes the name of a State object
+Change the name of a State object
 in the database hbtn_0e_6_usa.
 Usage: ./12-model_state_update_id_2.py
 <mysql username> <mysql password> <database name>
