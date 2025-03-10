@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Prints the State object with the given name from the database hbtn_0e_6_usa.
-Usage: ./10-model_state_my_get.py
+Print the State object with the given name from the database hbtn_0e_6_usa.
+Usage:  ./10-model_state_my_get.py
 <mysql username> <mysql password> <database name> <state name>
 """
 
