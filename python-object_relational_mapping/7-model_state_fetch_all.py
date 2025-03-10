@@ -10,7 +10,7 @@ from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
 if __name__ == "__main__":
-
+    # Get MySQL credentials from command-line arguments
     mysql_user = sys.argv[1]
     mysql_passwd = sys.argv[2]
     mysql_db = sys.argv[3]
