@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Lists all cities of a given state
+List all cities of a given state
 from the database hbtn_0e_4_usa.
 Usage: ./5-filter_cities.py
 <mysql username> <mysql password> <database name> <state name>
