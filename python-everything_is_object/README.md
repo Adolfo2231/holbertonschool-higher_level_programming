@@ -52,7 +52,7 @@ By completing this project, you'll be able to:
 - Work effectively with Python's built-in types
 
 ## 👨‍💻 Author
-Adolfo - [GitHub](https://github.com/adolfo2231)
+Adolfo Rodriguez - [GitHub](https://github.com/adolfo2231)
 
 ## 📝 License
 This project is part of the Holberton School curriculum.
